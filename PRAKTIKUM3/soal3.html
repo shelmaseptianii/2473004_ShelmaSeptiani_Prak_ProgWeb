@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+</head>
+
+<body>
+    <form action="proses.html" method="get">
+        <div
+            style="border: 2px solid gray; border-top: 4px solid black; border-bottom: 4px solid black; width: 450px; padding: 2px; font-family: serif;">
+            <div style="background-color: #999; color: white; text-align: center; padding: 4px;">
+                Personal Data
+            </div>
+
+            <table cellpadding="4" style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <td style="width: 120px;">Nama</td>
+                    <td><input type="text" name="nama" style="width: 160px;"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">Alamat</td>
+                    <td><textarea name="alamat" rows="3" cols="25" style="width: 200px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">Jenis Kelamin</td>
+                    <td>
+
+                        <input type="radio" id="lk" name="jk" value="laki-laki">
+                        <label for="lk">laki-laki</label><br>
+                        <input type="radio" id="pr" name="jk" value="perempuan">
+                        <label for="pr">perempuan</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tanggal Lahir</td>
+                    <td>
+                        <select style="width: 40px;" name="tanggal">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        -
+                        <select style="width: 80px;" name="bulan">
+                            <option value="Januari">Januari</option>
+                            <option value="Februari">Februari</option>
+                            <option value="Maret">Maret</option>
+                            <option value="April">April</option>
+                            <option value="Mei">Mei</option>
+                            <option value="Juni">Juni</option>
+                            <option value="Juli">Juli</option>
+                            <option value="Agustus">Agustus</option>
+                            <option value="September">September</option>
+                            <option value="Oktober">Oktober</option>
+                            <option value="November">November</option>
+                            <option value="Desember">Desember</option>
+                            <value></value>
+                        </select>
+                        -
+                        <select style="width: 60px;" name="tahun">
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">Jurusan</td>
+                    <td>
+
+                        <select name="jurusan" multiple="multiple" size="4" style="width: 116px;">
+                            <option value="ti">Teknik Informatika</option>
+                            <option value="si">Sistem Informasi</option>
+                            <option value="te">Elektro</option>
+                            <option value="ts">Teknik Sipil</option>
+                            <option value="ts">Akuntansi</option>
+                            <option value="ts">Kedokteran Gigi</option>
+                            <option value="ts">Kedokteran</option>
+                            <option value="ts">Hukum</option>
+                            <option value="ts">Psikologi</option>
+                            <option value="ts">Sastra Inggris</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="padding-top: 10px;">
+                        <fieldset style="border: 1px solid gray; padding-bottom: 10px;">
+                            <legend>Hobi</legend>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td><input type="checkbox" id="h_membaca" name="hobi" value="membaca"> <label
+                                            for="h_membaca">Membaca</label></td>
+                                    <td><input type="checkbox" id="h_voli" name="hobi" value="voli"> <label
+                                            for="h_voli">Voli</label></td>
+
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="h_voli" name="hobi" value="voli"> <label
+                                            for="h_voli">Menulis</label></td>
+                                    <td><input type="checkbox" id="h_voli" name="hobi" value="voli"> <label
+                                            for="h_voli">Badminton</label></td>
+                                <tr>
+                                    <td><input type="checkbox" id="h_voli" name="hobi" value="voli"> <label
+                                            for="h_voli">Catur</label></td>
+                                    <td><input type="checkbox" id="h_voli" name="hobi" value="voli"> <label
+                                            for="h_voli">Golf</label></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="padding-top: px;">
+                        <hr style="border: 0; border-top: 1px solid gray" ;>
+                        <div style="text-align: right;">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </form>
+</body>
+
+</html>

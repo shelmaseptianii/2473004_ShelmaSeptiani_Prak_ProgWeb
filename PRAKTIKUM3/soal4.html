@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+</head>
+
+<body>
+    <div style="border: 2px solid black; padding: 5px; width: fit-content; margin: 8px;">
+        <h2 style="margin-top: 0;">Form Tambah Data User</h2>
+        <form action="#" method="post">
+            <table cellpadding="2">
+                <tr>
+                    <td>Name</td>
+                    <td>: <input type="text" name="name" required
+                            oninvalid="this.setCustomValidity('Name is required!!!')"
+                            oninput="this.setCustomValidity('')"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>: <input type="text" name="address" required
+                            oninvalid="this.setCustomValidity('Address is required!!!')"
+                            oninput="this.setCustomValidity('')"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+
+                    <td>: <input type="email" name="email" required
+                            oninvalid="if(this.value === ''){ this.setCustomValidity('Harap isi bidang ini.') } else { this.setCustomValidity(`Sertakan '@' pada alamat email ini. '${this.value}' tidak memiliki '@'`) }"
+                            oninput="this.setCustomValidity('')"></td>
+                </tr>
+                <tr>
+                    <td>Home Page</td>
+                    <td>: <input type="url" name="homepage"></td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td>: <input type="date" name="birthday"></td>
+                </tr>
+                <tr>
+                    <td>Favorit Color</td>
+                    <td>: <input type="color" name="color"></td>
+                </tr>
+                <tr>
+                    <td>IPK</td>
+
+                    <td>: <input type="number" name="ipk" min="0" max="4" step="0.1" value="0" style="width: 50px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+
+                    <td>: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{7,10}"
+                            title="Format: ###-####### hingga ###-#########" required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="padding-top: 0px; padding-left: 11px">
+                        <input type="submit" value="Add">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <table border="1" cellspacing="2" cellpadding="10" style="border: 2px solid gray;">
+            <tr>
+                <th colspan="2" style="background-color: lightgray; font-size: 24px; font-family: serif;">
+                    Edit profile
+                </th>
+            </tr>
+            <tr>
+                <td style="text-align: center; padding: 10px; vertical-align: top;">
+                    <img src="profile.jpg" alt="Profile Picture" width="100" height="170"
+                        style="background-color: #eee; display: block; margin-bottom: 10px;">
+                    <button type="button">Upload</button>
+                </td>
+
+                <td style="padding: 2px; vertical-align: top;">
+                    <table cellpadding="5">
+                        <tr>
+                            <td>Name</td>
+                            <td>Tim Berners-Lee</td>
+                        </tr>
+                        <tr>
+                            <td>Position</td>
+                            <td>
+                                <select name="position" style="width: 150px; box-sizing: border-box; padding: 2px;">
+                                    <optgroup label="Programmer">
+                                        <option value="senior_prog" selected>Senior Programmer</option>
+                                        <option value="junior_prog">Junior Programmer</option>
+                                    </optgroup>
+                                    <optgroup label="System Analyst">
+                                        <option value="senior_analyst">Senior Analyst</option>
+                                        <option value="junior_analyst">Junior Analyst</option>
+                                    </optgroup>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input style="width: 150px; box-sizing: border-box; padding: 2px;" type="text"
+                                    name="password" value="admin"></td>
+                        </tr>
+                        <tr>
+                            <td>Confirm Password</td>
+                            <td><input style="width: 150px; box-sizing: border-box; padding: 2px;" type="password"
+                                    name="confirm_password" value="admin"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: right; padding-top: 15px;">
+                                <input type="reset" value="Reset">
+                                <input type="submit" value="Update">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
