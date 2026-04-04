@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        .container {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        .c1 {
+            left: 50px;
+            top: 20px;
+        }
+
+        .c2 {
+            left: 110px;
+            top: 20px;
+        }
+
+        .c3 {
+            left: 170px;
+            top: 20px;
+        }
+
+        .base {
+            z-index: 1;
+        }
+
+        .middle {
+            z-index: 2;
+        }
+
+        .top-layer {
+            z-index: 3;
+            height: 50px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img src="img/circle-red.png" class="circle c1 base">
+        <img src="img/circle-purple.png" class="circle c2 middle">
+        <img src="img/circle-red.png" class="circle c3 base">
+
+        <img src="img/circle-red-half.png" class="circle c1 top-layer">
+        <img src="img/circle-red-half.png" class="circle c3 top-layer">
+
+    </div>
+
+</body>
+
+</html>

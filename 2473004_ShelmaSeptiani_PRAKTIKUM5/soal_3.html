@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 20px;
+            background: #f0f0f0;
+        }
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background-color: red;
+            height: 60px;
+            width: 100%;
+            margin-bottom: 4px;
+        }
+
+        .main-wrapper {
+            overflow: hidden;
+        }
+
+        .sidebar {
+            float: left;
+            background-color: blue;
+            width: 160px;
+            height: 200px;
+        }
+
+        .content-area {
+            float: left;
+            background-color: green;
+            width: calc(100% - 164px);
+            margin-left: 4px;
+        }
+
+        .content-top {
+            overflow: hidden;
+            padding: 8px;
+            min-height: 170px;
+        }
+
+        .yellow-box {
+            float: right;
+            background-color: yellow;
+            width: 140px;
+            height: 150px;
+            margin-left: 8px;
+        }
+
+        .content-top p {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .content-bottom {
+            clear: both;
+            padding: 8px;
+            min-height: 185px;
+        }
+
+        .content-bottom p {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="main-wrapper clearfix">
+            <div class="sidebar"></div>
+
+            <div class="content-area">
+
+                <div class="content-top">
+                    <div class="yellow-box"></div>
+                    <p>
+                        content content content content content
+                        content content content content content content
+                        content content content content content content
+                        content content content content content content
+                        content content content content content content
+                        content content content content content
+                    </p>
+                </div>
+
+                <div class="content-bottom">
+                    <p>
+                        content content content content content content content content
+                        content content content content content content content content
+                        content content content content content content content content
+                        content content content content content content content content
+                        content content content content content content content content
+                        content content content content content content content content
+                        content content content content
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

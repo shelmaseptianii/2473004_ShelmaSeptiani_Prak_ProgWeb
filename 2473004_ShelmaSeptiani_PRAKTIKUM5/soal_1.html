@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        table {
+            margin: auto;
+        }
+
+        .box {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .box img {
+            width: 150px;
+            margin-top: 35px;
+        }
+
+        .corner {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 5px solid #FF0000;
+        }
+
+        .top-left {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .top-right {
+            top: 0;
+            right: 0;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            border-right: none;
+            border-top: none;
+        }
+
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+
+        .box:hover .corner {
+            border-color: #FF00FF;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td class="box">
+                <span class="corner top-left"></span>
+                <span class="corner top-right"></span>
+                <span class="corner bottom-left"></span>
+                <span class="corner bottom-right"></span>
+
+                <a href="#">
+                    <img src="img/star.jpg" alt="star">
+                </a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
