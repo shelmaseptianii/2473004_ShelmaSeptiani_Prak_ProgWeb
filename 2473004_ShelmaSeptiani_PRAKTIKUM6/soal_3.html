@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        body {
+            padding: 10px;
+        }
+
+        .kotak-input {
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .kotak-luar {
+            border: 1px solid #999;
+            padding: 1px;
+            display: inline-block;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .kotak-oranye {
+            background-color: orange;
+            border: 1px solid white;
+        }
+
+        .kotak-kosong {
+            background-color: transparent;
+            border: none;
+        }
+
+        button {
+            margin-top: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="kotak-input">
+        Tinggi Piramida: <input type="number" id="tinggi" min="1"><br>
+        <button onclick="buatPiramida()">proses</button>
+    </div>
+
+    <br>
+
+    <div class="kotak-luar" id="tempat-piramida" style="display: none;">
+    </div>
+
+    <script>
+        function buatPiramida() {
+            var inputUser = document.getElementById("tinggi").value;
+            var t = parseInt(inputUser);
+
+            if (isNaN(t) || t <= 0) {
+                alert("Masukkan angka tinggi piramida yang valid.");
+                return;
+            }
+
+            document.getElementById("tempat-piramida").style.display = "inline-block";
+
+            var kodeTabel = "<table width='800' height='600'>";
+
+            var totalKolom = (2 * t) - 1;
+            var titikTengah = t;
+
+            for (var baris = 1; baris <= t; baris++) {
+                kodeTabel += "<tr>";
+
+                for (var kolom = 1; kolom <= totalKolom; kolom++) {
+                    var batasKiri = titikTengah - baris + 1;
+                    var batasKanan = titikTengah + baris - 1;
+
+                    if (kolom >= batasKiri && kolom <= batasKanan) {
+                        kodeTabel += "<td class='kotak-oranye'></td>";
+                    } else {
+                        kodeTabel += "<td class='kotak-kosong'></td>";
+                    }
+                }
+
+                kodeTabel += "</tr>";
+            }
+
+            kodeTabel += "</table>";
+
+            document.getElementById("tempat-piramida").innerHTML = kodeTabel;
+        }
+    </script>
+
+</body>
+
+</html>

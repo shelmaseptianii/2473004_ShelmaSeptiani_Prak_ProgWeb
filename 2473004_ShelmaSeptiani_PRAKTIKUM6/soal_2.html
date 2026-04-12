@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        body { font-family: 'Times New Roman', Times, serif; }
+        .container {
+            width: 150px;
+            background: #ffffff;
+            padding: 10px;
+            border: 2px solid #ccc;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        td {
+            border: 1px solid black;
+            width: 80px;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+
+    <script>
+        function generate(){
+            var angka;
+
+            do {
+                angka = prompt("A number?");
+            } while(isNaN(angka) || angka === "" || angka === null);
+
+            angka = parseInt(angka);
+
+            var hasil = "<table>";
+            for(var i=1; i<=angka; i++){
+                hasil += "<tr>";
+                hasil += "<td>"+i+"</td>";
+                hasil += "<td>x</td>";
+                hasil += "<td>"+angka+"</td>";
+                hasil += "<td>=</td>";
+                hasil += "<td>"+(i*angka)+"</td>";
+                hasil += "</tr>";
+            }
+            hasil += "</table>";
+
+            document.getElementById("output").innerHTML = hasil;
+        }
+    </script>
+</head>
+
+<body onload="generate()">
+
+<div class="container">
+    <div id="output"></div>
+</div>
+
+</body>
+</html>

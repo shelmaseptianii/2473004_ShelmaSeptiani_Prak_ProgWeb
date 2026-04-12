@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            padding: 10px;
+        }
+
+        table {
+            border: 1px solid #a0a0a0;
+            background-color: white;
+            border-spacing: 4px;
+            width: 400px;
+        }
+
+        td {
+            border: 1px solid #a0a0a0;
+            padding: 6px;
+        }
+
+        .label {
+            color: blue;
+            font-weight: bold;
+            text-align: center;
+            width: 80px;
+        }
+
+        input[type="text"] {
+            width: 95%;
+            padding: 2px 4px;
+            box-sizing: border-box;
+        }
+
+        input[readonly] {
+            color: #999;
+        }
+
+        .tgh {
+            text-align: center;
+        }
+
+        select {
+            margin: 4px 0;
+            padding: 2px;
+        }
+
+        button {
+            color: blue;
+            font-weight: bold;
+            margin: 4px 8px;
+            padding: 4px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td class="label">Input :</td>
+            <td><input type="text" id="inputData"></td>
+        </tr>
+
+        <tr>
+            <td class="label">Output :</td>
+            <td><input type="text" id="outputData" readonly></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="tgh">
+                <select id="tipeKonversi">
+                    <option value="dec-bin">decimal-biner</option>
+                    <option value="bin-dec">biner-decimal</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="tgh">
+                <button onclick="prosesKonversi()">PROSES</button>
+                <button onclick="resetForm()">RESET</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function prosesKonversi() {
+            var nilaiInput = document.getElementById("inputData").value;
+            var tipe = document.getElementById("tipeKonversi").value;
+            var elemenOutput = document.getElementById("outputData");
+
+            if (nilaiInput.trim() === "") {
+                alert("Silakan isi nilai input terlebih dahulu.");
+                return;
+            }
+
+            if (tipe === "dec-bin") {
+                var dec = parseInt(nilaiInput);
+
+                if (isNaN(dec) || dec < 0 || dec > 255) {
+                    alert("Untuk konversi decimal-biner, input hanya boleh angka 0 s/d 255.");
+                    return;
+                }
+
+                var biner = "";
+                if (dec === 0) {
+                    biner = "0";
+                } else {
+                    while (dec > 0) {
+                        biner = (dec % 2) + biner;
+                        dec = Math.floor(dec / 2);
+                    }
+                }
+
+                elemenOutput.value = biner;
+            }
+
+            else if (tipe === "bin-dec") {
+                if (nilaiInput.length !== 8) {
+                    alert("Untuk konversi biner-decimal, input harus tepat 8 digit angka (0 atau 1).");
+                    return;
+                }
+
+                for (var i = 0; i < nilaiInput.length; i++) {
+                    if (nilaiInput[i] !== '0' && nilaiInput[i] !== '1') {
+                        alert("Biner hanya boleh terdiri dari angka 0 dan 1.");
+                        return;
+                    }
+                }
+
+                var desimal = 0;
+                for (var j = 0; j < nilaiInput.length; j++) {
+                    desimal = (desimal * 2) + parseInt(nilaiInput[j]);
+                }
+
+                elemenOutput.value = desimal;
+            }
+        }
+
+        function resetForm() {
+            document.getElementById("inputData").value = "";
+            document.getElementById("outputData").value = "";
+        }
+    </script>
+
+</body>
+
+</html>
