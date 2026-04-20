@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        .container-form {
+            border: 2px solid #555;
+            padding: 12px;
+            display: inline-block;
+            background-color: #fcfcfc;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .label-utama {
+            font-family: serif;
+            font-size: 24px;
+            padding-right: 15px;
+        }
+
+        .input-teks {
+            width: 180px;
+            padding: 4px;
+            border: 1px solid #999;
+            margin-bottom: 5px;
+        }
+
+        .tombol-add {
+            padding: 2px 15px;
+            font-weight: bold;
+        }
+
+        .pilih-opsi {
+            width: 130px;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-form">
+        <table border="0">
+            <tr>
+                <td class="label-utama">Data</td>
+                <td><input type="text" id="nilaiInput" class="input-teks"></td>
+            </tr>
+            <tr>
+                <td><button onclick="simpanKeArray()" class="tombol-add">Add</button></td>
+                <td>
+                    <select id="menuAksi" class="pilih-opsi" onchange="eksekusiPerhitungan()">
+                        <option value="">Pilih Operasi</option>
+                        <option value="lihat">Display</option>
+                        <option value="totalData">Count</option>
+                        <option value="jumlah">Sum</option>
+                        <option value="rata">Average</option>
+                        <option value="terbesar">Max</option>
+                        <option value="terkecil">Min</option>
+                        <option value="angkaGanjil">Ganjil</option>
+                        <option value="angkaGenap">Genap</option>
+                        <option value="reset">Hapus</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-utama">Hasil</td>
+                <td><input type="text" id="outputHasil" class="input-teks" readonly></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var listData = [];
+
+        function simpanKeArray() {
+            var fieldInput = document.getElementById("nilaiInput");
+            var angka = Number(fieldInput.value);
+
+            if (fieldInput.value !== "" && !isNaN(angka)) {
+                listData.push(angka);
+            }
+
+            fieldInput.value = "";
+            fieldInput.focus();
+        }
+
+        function eksekusiPerhitungan() {
+            var mode = document.getElementById("menuAksi").value;
+            var boxHasil = document.getElementById("outputHasil");
+            var result = "";
+
+            if (mode === "lihat") {
+                result = listData.toString();
+            } 
+            else if (mode === "totalData") {
+                result = listData.length;
+            } 
+            else if (mode === "jumlah") {
+                var total = 0;
+                for (var x = 0; x < listData.length; x++) {
+                    total += listData[x];
+                }
+                result = total;
+            } 
+            else if (mode === "rata") {
+                if (listData.length > 0) {
+                    var sumValue = 0;
+                    for (var x = 0; x < listData.length; x++) {
+                        sumValue += listData[x];
+                    }
+                    result = sumValue / listData.length;
+                }
+            } 
+            else if (mode === "terbesar") {
+                if (listData.length > 0) {
+                    result = Math.max.apply(null, listData);
+                }
+            } 
+            else if (mode === "terkecil") {
+                if (listData.length > 0) {
+                    result = Math.min.apply(null, listData);
+                }
+            } 
+            else if (mode === "angkaGanjil") {
+                var ganjil = [];
+                for (var x = 0; x < listData.length; x++) {
+                    if (listData[x] % 2 !== 0) ganjil.push(listData[x]);
+                }
+                result = ganjil.join(",");
+            } 
+            else if (mode === "angkaGenap") {
+                var genap = [];
+                for (var x = 0; x < listData.length; x++) {
+                    if (listData[x] % 2 === 0) genap.push(listData[x]);
+                }
+                result = genap.join(",");
+            } 
+            else if (mode === "reset") {
+                listData = [];
+                document.getElementById("menuAksi").value = "";
+                result = "";
+            }
+
+            boxHasil.value = result;
+        }
+    </script>
+
+</body>
+
+</html>
