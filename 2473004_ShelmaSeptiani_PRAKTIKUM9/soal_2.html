@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 350px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+
+        .input-section {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 5px;
+        }
+
+        input[type="text"] {
+            padding: 3px;
+            flex-grow: 1;
+            border: 1px solid #999;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 2px 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #777;
+            border-radius: 2px;
+        }
+
+        #daftar-nama div {
+            padding: 2px 0;
+            font-size: 14px;
+        }
+
+        .highlight {
+            text-decoration: underline;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="input-section">
+            <input type="text" id="inputNama" placeholder="">
+            <button id="btnAdd">Add</button>
+            <button id="btnSearch">Search</button>
+        </div>
+
+        <div id="daftar-nama">
+            <div>John Resig</div>
+            <div>George Martin</div>
+            <div>Malcom John Sinclair</div>
+            <div>J. Ohn</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            
+            $("#btnAdd").click(function() {
+                var namaBaru = $("#inputNama").val();
+                
+                if(namaBaru !== "") {
+                    $("<div>" + namaBaru + "</div>").appendTo("#daftar-nama");
+                    
+                    $("#inputNama").val("");
+                }
+            });
+
+            $("#btnSearch").click(function() {
+                var kataKunci = $("#inputNama").val();
+
+                $("#daftar-nama div").css("text-decoration", "none");
+
+                if(kataKunci !== "") {
+                    $("#daftar-nama div:contains('" + kataKunci + "')").css("text-decoration", "underline");
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>

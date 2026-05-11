@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        ol.navigasi-atas {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        li.item-navigasi {
+            background-color: #ff1493;
+            color: white;
+            margin-right: 15px;
+            padding: 5px 10px;
+            width: 140px;
+            cursor: pointer;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        li.item-navigasi ol {
+            list-style-type: none;
+            padding: 5px 10px;
+            margin: 0;
+            background-color: white;
+            border: 2px solid #ff1493;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 140px;
+            box-sizing: border-box;
+        }
+
+        li.item-navigasi ol li {
+            color: black;
+            text-decoration: underline;
+            margin-bottom: 3px;
+        }
+    </style>
+
+    <script src="jquery-4.0.0.min.js"></script>
+</head>
+
+<body>
+
+    <ol class="navigasi-atas">
+        <li class="item-navigasi">jQuery
+            <ol>
+                <li>Download</li>
+                <li>Documentation</li>
+                <li>Blog</li>
+            </ol>
+        </li>
+        <li class="item-navigasi">Community
+            <ol>
+                <li>Mailing List</li>
+                <li>Tutorials</li>
+                <li>Demos</li>
+                <li>Plugins</li>
+            </ol>
+        </li>
+        <li class="item-navigasi">Development
+            <ol>
+                <li>Source Code</li>
+                <li>Bug Tracking</li>
+                <li>Recent Changes</li>
+            </ol>
+        </li>
+    </ol>
+
+    <script>
+        $(document).ready(function () {
+            $("li.item-navigasi ol").hide();
+
+            $("li.item-navigasi").hover(
+                function () {
+                    $(this).children("ol").show();
+                },
+                function () {
+                    $(this).children("ol").hide();
+                }
+            );
+        });
+    </script>
+
+</body>
+
+</html>

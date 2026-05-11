@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <script src="jquery-4.0.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        div.elemen-box {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 2px blue solid;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .baris-baru {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btnProsesWarna">Change colors</button>
+
+    <div class="baris-baru"></div>
+    <br>
+
+    <div class="elemen-box"></div>
+    <div class="elemen-box"></div>
+    <div class="elemen-box"></div>
+    <div class="elemen-box"></div>
+    <div class="elemen-box"></div>
+    <div class="elemen-box"></div>
+    <div class="elemen-box"></div>
+    <div class="elemen-box"></div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("div.elemen-box").click(function () {
+                $("div.elemen-box").css("background-color", "white").removeAttr("id");
+                
+                $(this).css("background-color", "red").attr("id", "targetMerah");
+            });
+
+            $("#btnProsesWarna").click(function () {
+                $("div.elemen-box").each(function (idx, item) {
+
+                    if ($(item).attr("id") === "targetMerah") {
+                        return false; 
+                    }
+
+                    $(item).css("background-color", "yellow");
+                });
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
