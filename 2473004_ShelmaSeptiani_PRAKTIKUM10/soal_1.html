@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>2473004-Shelma Septiani</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+        }
+        .container {
+            border: 1px solid #777;
+            padding: 15px;
+            width: 450px;
+            margin-bottom: 20px;
+        }
+        .title {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .radio-group {
+            border: 1px solid #aaa;
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 10px;
+        }
+        .radio-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            margin-top: 5px;
+            padding: 2px 10px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 450px;
+        }
+        th {
+            background-color: #000;
+            color: #fff;
+            font-weight: bold;
+            text-align: left;
+            padding: 5px;
+            border: 1px solid #000;
+        }
+        td {
+            padding: 5px;
+            border: 1px solid #000;
+        }
+        
+        tr.ganjil td {
+            background-color: #FFFFCC;
+        }
+        tr.genap td {
+            background-color: #CCFFAA;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">
+        Selamat! Berikut adalah Daftar Mahasiswa yang mendapat<br>
+        Nilai A Pemrograman Web SI Tahun Ajaran 2023/2024
+    </div>
+
+    <div class="container">
+        <div class="radio-group">
+            <label><input type="radio" name="kelas" value="all" checked> All</label>
+            <label><input type="radio" name="kelas" value="A"> Kelas A</label>
+            <label><input type="radio" name="kelas" value="B"> Kelas B</label>
+            <button id="btnSearch">Search</button>
+        </div>
+    </div>
+
+    <table id="tabelMahasiswa">
+        <thead>
+            <tr>
+                <th>NRP</th>
+                <th>NAMA</th>
+                <th>KELAS</th>
+                <th>NILAI AKHIR</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $('#btnSearch').click(function() {
+                var pilihanKelas = $("input[name='kelas']:checked").val();
+                var fileTarget = "";
+
+                if (pilihanKelas === "all") {
+                    fileTarget = "nilai.js";
+                } else if (pilihanKelas === "A") {
+                    fileTarget = "nilaiA.js";
+                } else if (pilihanKelas === "B") {
+                    fileTarget = "nilaiB.js";
+                }
+
+                $.getJSON(fileTarget, function(data) {
+                    var barisTabel = "";
+                    
+                    $('#tabelMahasiswa tbody').empty();
+
+                    $.each(data, function(index, mhs) {
+                        barisTabel += "<tr>" +
+                                        "<td>" + mhs.nrp + "</td>" +
+                                        "<td>" + mhs.nama + "</td>" +
+                                        "<td>" + mhs.kelas + "</td>" +
+                                        "<td>" + mhs.nilai_akhir + "</td>" +
+                                      "</tr>";
+                    });
+
+                    $('#tabelMahasiswa tbody').html(barisTabel);
+
+                    $('#tabelMahasiswa tbody tr:even').addClass('ganjil');
+                    $('#tabelMahasiswa tbody tr:odd').addClass('genap');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

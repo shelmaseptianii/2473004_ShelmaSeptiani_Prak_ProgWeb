@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473004-Shelma Septiani</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 20px;
+            font-size: 15px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 750px;
+            margin-bottom: 10px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        .judul-portal {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .teks-tautan {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 3px 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="tabelKonten">
+        <tr>
+            <td>Title</td>
+        </tr>
+        <tr>
+            <td>Content</td>
+        </tr>
+        <tr>
+            <td>Generator</td>
+        </tr>
+    </table>
+
+    <button id="tombolLihat">Look</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#tombolLihat").click(function () {
+
+                $.ajax({
+                    url: "SIJson.txt",
+                    dataType: "text",
+                    success: function (teksMentah) {
+
+                        var teksBersih = $.trim(teksMentah).replace(/;$/, "");
+
+                        var dataPortal;
+                        try {
+                            dataPortal = eval("(" + teksBersih + ")");
+                        } catch (error) {
+                            alert("Format file SIJson.txt masih salah dan tidak bisa dibaca.");
+                            return;
+                        }
+
+                        var htmlTabel = "<tr><td><div class='judul-portal'><a href='" + dataPortal.link + "' class='teks-tautan'>" + dataPortal.title + "</a></div></td></tr>";
+
+                        $.each(dataPortal.items, function (indeks, matkul) {
+                            htmlTabel += "<tr><td>";
+                            htmlTabel += "<a href='" + matkul.link + "' class='teks-tautan'>" + matkul.title + "</a><br>";
+                            htmlTabel += "By : " + matkul.author + " / <i>" + matkul.published + "</i><br><br>";
+                            htmlTabel += matkul.description + "<br><br>";
+
+                            var tautanKampus = (matkul.universitas && matkul.universitas.m) ? matkul.universitas.m : "#";
+                            htmlTabel += "Universitas : <a href='" + tautanKampus + "' class='teks-tautan'>Click Here</a><br>";
+
+                            htmlTabel += "Tag(s) : " + matkul.tags;
+                            htmlTabel += "</td></tr>";
+                        });
+
+                        htmlTabel += "<tr><td>&copy;" + dataPortal.generator + "</td></tr>";
+
+                        $("#tabelKonten").html(htmlTabel);
+
+                    },
+                    error: function () {
+                        alert("Gagal memuat data! Coba pastikan file dijalankan melalui Local Server.");
+                    }
+                });
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>
