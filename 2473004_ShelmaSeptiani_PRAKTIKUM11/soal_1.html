@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>2473004-Shelma Septiani</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+        }
+
+        .container-table {
+            border: 1px solid #7f7f7f;
+            width: 450px;
+            border-collapse: collapse;
+        }
+
+        .header {
+            background-color: #000099;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+            padding: 10px 0;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+
+        .form-table td {
+            padding: 4px 8px;
+            font-size: 14px;
+        }
+
+        .label-col {
+            width: 35%;
+        }
+
+        .input-col {
+            width: 65%;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 2px;
+            border: 1px solid #a6a6a6;
+        }
+
+        input[type="submit"] {
+            padding: 2px 12px;
+            background-color: #e1e1e1;
+            border: 1px solid #707070;
+            cursor: pointer;
+        }
+
+        .footer {
+            border-top: 1px solid #a6a6a6;
+            margin-top: 20px;
+            padding: 8px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="container-table">
+        <tr>
+            <td class="header">Login</td>
+        </tr>
+
+        <tr>
+            <td>
+                <form action="input.php" method="POST">
+                    <table class="form-table">
+                        <tr>
+                            <td class="label-col">Username</td>
+                            <td class="input-col"><input type="text" name="username" required></td>
+                        </tr>
+                        <tr>
+                            <td class="label-col">Password</td>
+                            <td class="input-col"><input type="password" name="password" required></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="login"></td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="footer">
+                @UKM2014<br>
+                Name-NRP&copy;
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
